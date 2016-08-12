@@ -67,6 +67,21 @@ $(function() {
         console.log("android: " + android);
         console.log("net: " + net);
         console.log("design: " + design);
+
+        var language;
+
+        if (rails >= drupal && rails >= android && rails >= design && rails >= net) {
+          language = "Ruby & Rails";
+        } else if (drupal >= rails && drupal >= android && drupal >= design && drupal >= net) {
+          language = "PHP & Drupal";
+        } else if (android >= rails && android >= drupal && android >= design && android >= net) {
+          language = "Java & Android";
+        } else if (design >= rails && design >= android && design >= drupal && design >= net) {
+          language = "CSS & Design";
+        } else if (net >= rails && net >= android && net >= drupal && net >= design) {
+          language = "C# & .NET";
+        }
+        $("#language").text(language);
         $("#result").show();
       }
     } else {
