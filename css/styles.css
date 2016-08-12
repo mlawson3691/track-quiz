@@ -6,6 +6,12 @@ body {
   width: 700px;
 }
 
+.well {
+  padding: 40px 20px;
+  width: 80%;
+  margin: 25px auto;
+}
+
 #question2, #question3, #question4, #question5, .alert, #result {
   display: none;
 }
@@ -13,4 +19,12 @@ body {
 .alert {
   width: 50%;
   margin: 25px auto;
+}
+
+i {
+  font-size: 150px;
+}
+
+#result * {
+  margin-top: 50px;
 }

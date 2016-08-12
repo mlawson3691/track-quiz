@@ -72,14 +72,19 @@ $(function() {
 
         if (rails >= drupal && rails >= android && rails >= design && rails >= net) {
           language = "Ruby & Rails";
+          $("#result i").addClass("devicon-ruby-plain");
         } else if (drupal >= rails && drupal >= android && drupal >= design && drupal >= net) {
           language = "PHP & Drupal";
+          $("#result i").addClass("devicon-drupal-plain");
         } else if (android >= rails && android >= drupal && android >= design && android >= net) {
           language = "Java & Android";
+          $("#result i").addClass("devicon-android-plain");
         } else if (design >= rails && design >= android && design >= drupal && design >= net) {
           language = "CSS & Design";
+          $("#result i").addClass("devicon-css3-plain");
         } else if (net >= rails && net >= android && net >= drupal && net >= design) {
           language = "C# & .NET";
+          $("#result i").addClass("devicon-csharp-plain");
         }
         $("#language").text(language);
         $("#result").show();
