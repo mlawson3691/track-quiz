@@ -54,3 +54,22 @@ i {
 #language {
   font-style: italic;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 25px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+
+  #name {
+    width: 100%;
+  }
+
+  button {
+    margin-bottom: 50px;
+  }
+}
