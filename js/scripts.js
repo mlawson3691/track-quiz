@@ -10,14 +10,13 @@ $(function() {
   $("#submit").click(function(event) {
     $('.alert').hide();
 
-    if (questionCounter === 0 && $("#name").val()) {
+    if (questionCounter === 0 && $("#name").val()) { // first successful button click
       var name = $("#name").val();
       $(".name").text(name);
       questionCounter += 1;
       $("#nameForm").hide();
       $("#question1").fadeIn();
-    } else if ($("input:radio[name=question" + questionCounter + "]:checked").val()) { // Make sure user answered the question before clicking submit
-
+    } else if ($("input:radio[name=question" + questionCounter + "]:checked").val()) { // subsequent successful button clicks
       // Based on the current question, increase the user's score for each language based on their answers
       if (questionCounter === 1) {
         if ($("input:radio[name=question1]:checked").val() === "1") {
@@ -68,30 +67,36 @@ $(function() {
         $('#question' + questionCounter).fadeIn();
       } else {
         $("#submit").hide();
-        console.log("rails: " + rails);
-        console.log("drupal: " + drupal);
-        console.log("android: " + android);
-        console.log("net: " + net);
-        console.log("design: " + design);
 
-        var language;
+        var language, trackLink;
 
         if (rails >= drupal && rails >= android && rails >= design && rails >= net) {
           language = "Ruby & Rails";
-          $("#result i").addClass("devicon-ruby-plain");
+          $("#icon1").addClass("devicon-ruby-plain");
+          $("#icon2").addClass("devicon-rails-plain");
+          trackLink = "<a href='http://www.epicodus.com/ruby' target='_blank'>" + language + "</a>";
         } else if (drupal >= rails && drupal >= android && drupal >= design && drupal >= net) {
           language = "PHP & Drupal";
-          $("#result i").addClass("devicon-drupal-plain");
+          $("#icon1").addClass("devicon-php-plain");
+          $("#icon2").addClass("devicon-drupal-plain");
+          trackLink = "<a href='http://www.epicodus.com/php' target='_blank'>" + language + "</a>";
         } else if (android >= rails && android >= drupal && android >= design && android >= net) {
           language = "Java & Android";
-          $("#result i").addClass("devicon-android-plain");
+          $("#icon1").addClass("devicon-java-plain");
+          $("#icon2").addClass("devicon-android-plain");
+          trackLink = "<a href='http://www.epicodus.com/java' target='_blank'>" + language + "</a>";
         } else if (design >= rails && design >= android && design >= drupal && design >= net) {
           language = "CSS & Design";
-          $("#result i").addClass("devicon-css3-plain");
+          $("#icon1").addClass("devicon-css3-plain");
+          $("#icon2").hide();
+          trackLink = "<a href='http://www.epicodus.com/css' target='_blank'>" + language + "</a>";
         } else if (net >= rails && net >= android && net >= drupal && net >= design) {
           language = "C# & .NET";
-          $("#result i").addClass("devicon-csharp-plain");
+          $("#icon1").addClass("devicon-csharp-plain");
+          $("#icon2").addClass("devicon-windows8-original");
+          trackLink = "<a href='http://www.epicodus.com/c-sharp' target='_blank'>" + language + "</a>";
         }
+        $("#trackLink").html(trackLink);
         $("#language").text(language);
         $("#result").fadeIn();
         $("#reset").fadeIn();
