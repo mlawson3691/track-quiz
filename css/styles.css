@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+}
+
+.container {
+  width: 700px;
+}
+
+#question2, #question3, #question4, #question5, #result {
+  display: none;
+}
