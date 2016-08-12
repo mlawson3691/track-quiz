@@ -6,6 +6,11 @@ body {
   width: 700px;
 }
 
-#question2, #question3, #question4, #question5, #result {
+#question2, #question3, #question4, #question5, .alert, #result {
   display: none;
+}
+
+.alert {
+  width: 50%;
+  margin: 25px auto;
 }
