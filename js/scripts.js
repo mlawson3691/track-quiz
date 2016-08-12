@@ -27,7 +27,7 @@ $(function() {
     } else if (question === 3) {
       if ($("input:radio[name=question3]:checked").val() === "1") {
         rails += 1;
-        drupal += 1;
+        drupal += 2;
         net += 1;
         design += 1;
       } else {
@@ -37,17 +37,18 @@ $(function() {
       if ($("input:radio[name=question4]:checked").val() === "1") {
         net += 2;
       } else {
-        rails += 1;
+        rails += 2;
         drupal += 1;
       }
     } else if (question === 5) {
       if ($("input:radio[name=question5]:checked").val() === "1") {
         drupal += 1;
-        rails += 1;
         design += 1;
+        android += 1;
       } else {
         net += 1;
-        android += 1
+        android += 1;
+        design += 1;
       }
     }
   };
