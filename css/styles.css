@@ -1,19 +1,15 @@
 body {
   text-align: center;
+  font-size: 1.75em;
+  background-color: #e5f9ff;
 }
 
 .container {
-  width: 700px;
+  margin-top: 150px;
 }
 
-.well {
-  padding: 40px 20px;
-  width: 80%;
-  margin: 25px auto;
-}
-
-#question2, #question3, #question4, #question5, .alert, #result {
-  display: none;
+h1 {
+  margin-bottom: 75px;
 }
 
 .alert {
@@ -21,10 +17,32 @@ body {
   margin: 25px auto;
 }
 
-i {
-  font-size: 150px;
+.well {
+  padding: 40px 20px;
+  width: 80%;
+  margin: 25px auto;
+  background: white;
+  opacity: .9;
+}
+
+#question1, #question2, #question3, #question4, #question5, .alert, #result, #reset {
+  display: none;
+}
+
+label {
+  margin-bottom: 15px;
+}
+
+#name {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #result * {
   margin-top: 50px;
+}
+
+i {
+  font-size: 150px;
 }

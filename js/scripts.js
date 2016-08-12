@@ -1,6 +1,6 @@
 $(function() {
 
-  var questionCounter = 1;
+  var questionCounter = 0;
   var rails = 0;
   var drupal = 0;
   var android = 0;
@@ -9,8 +9,14 @@ $(function() {
 
   $("#submit").click(function(event) {
     $('.alert').hide();
-    // Make sure user answered the question before clicking submit
-    if ($("input:radio[name=question" + questionCounter + "]:checked").val()) {
+
+    if (questionCounter === 0 && $("#name").val()) {
+      var name = $("#name").val();
+      $(".name").text(name);
+      questionCounter += 1;
+      $("#nameForm").hide();
+      $("#question1").fadeIn();
+    } else if ($("input:radio[name=question" + questionCounter + "]:checked").val()) { // Make sure user answered the question before clicking submit
 
       // Based on the current question, increase the user's score for each language based on their answers
       if (questionCounter === 1) {
@@ -87,13 +93,18 @@ $(function() {
           $("#result i").addClass("devicon-csharp-plain");
         }
         $("#language").text(language);
-        $("#result").show();
+        $("#result").fadeIn();
+        $("#reset").fadeIn();
       }
     } else {
       $(".alert").fadeIn();
     }
 
     event.preventDefault();
+  });
+
+  $("#reset").click(function(){
+    location.reload();
   });
 
 });
