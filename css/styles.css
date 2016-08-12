@@ -29,14 +29,14 @@ h1 {
   display: none;
 }
 
-label {
-  margin-bottom: 15px;
-}
-
 #name {
   width: 60%;
-  margin: 0 auto;
+  margin: 25px auto 0 auto;
   text-align: center;
+}
+
+.radio {
+  margin-bottom: 20px;
 }
 
 #result * {
@@ -45,10 +45,6 @@ label {
 
 i {
   font-size: 150px;
-}
-
-#icon1 {
-  margin-right: 40px;
 }
 
 #language {
@@ -69,7 +65,8 @@ i {
     width: 100%;
   }
 
-  button {
-    margin-bottom: 50px;
+  #icon1 {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }
